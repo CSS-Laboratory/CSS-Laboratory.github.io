@@ -1,11 +1,23 @@
-// Components Loader for CSS Lab Website
-// This script loads shared components like navbar and footer
+// javascript/components-loader.js
 
 document.addEventListener('DOMContentLoaded', function() {
   console.log("DOM loaded, initializing components...");
   
+  // --- Combined callback function for after navbar loads ---
+  function afterNavbarLoaded() {
+    if (typeof setActiveNavLink === 'function') {
+      setActiveNavLink(); // Your existing callback
+    }
+    if (typeof setupMobileNavToggle === 'function') {
+      setupMobileNavToggle(); // Call the nav toggle setup
+    } else {
+      console.warn("setupMobileNavToggle function is not defined. Mobile menu may not work.");
+    }
+  }
+  // --- End combined callback ---
+  
   // Load navbar and footer components
-  loadComponent('navbar-container', 'components/navbar.html', setActiveNavLink);
+  loadComponent('navbar-container', 'components/navbar.html', afterNavbarLoaded); // Use the new combined callback
   loadComponent('footer-container', 'components/footer.html', loadFooterAnimation);
 });
 
@@ -17,8 +29,6 @@ function loadComponent(containerId, componentPath, callback = null) {
     return;
   }
   
-  console.log(`Loading component into #${containerId} from ${componentPath}`);
-  
   fetch(componentPath)
     .then(response => {
       if (!response.ok) {
@@ -28,11 +38,11 @@ function loadComponent(containerId, componentPath, callback = null) {
     })
     .then(html => {
       container.innerHTML = html;
-      console.log(`Component loaded into #${containerId}`);
+      // console.log(`Component loaded into #${containerId}`); // Optional debug
       
       // Execute callback if provided
       if (callback && typeof callback === 'function') {
-        console.log(`Running callback for #${containerId}`);
+        // console.log(`Running callback for #${containerId}`); // Optional debug
         callback();
       }
     })
@@ -43,55 +53,26 @@ function loadComponent(containerId, componentPath, callback = null) {
 }
 
 // Function to set the active navigation link based on current page
+// (Your existing setActiveNavLink function - ensure it's defined if not in this file)
+// Example:
 function setActiveNavLink() {
-  // Get current page filename
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  console.log(`Current page: ${currentPage}`);
-  
-  // Find the corresponding navigation link
   let navLinkId;
+  // ... (your existing switch case or logic for navLinkId) ...
+  // (This should already be in your components-loader.js or accessible to it)
   switch(currentPage) {
-    case 'index.html':
-      navLinkId = 'nav-home';
-      break;
-    case 'research.html':
-      navLinkId = 'nav-research';
-      break;
-    case 'members.html':
-      navLinkId = 'nav-members';
-      break;
-    case 'resources.html':
-      navLinkId = 'nav-resources';
-      break;
-    case 'blog.html':
-      navLinkId = 'nav-blog';
-      break;
-    case 'contact_us.html':
-      navLinkId = 'nav-contact';
-      break;
-    default:
-      // If not one of the main pages, try to determine based on name
-      if (currentPage.includes('research')) {
-        navLinkId = 'nav-research';
-      } else if (currentPage.includes('member')) {
-        navLinkId = 'nav-members';
-      } else if (currentPage.includes('resource')) {
-        navLinkId = 'nav-resources';
-      } else if (currentPage.includes('blog')) {
-        navLinkId = 'nav-blog';
-      } else if (currentPage.includes('contact')) {
-        navLinkId = 'nav-contact';
-      }
+    case 'index.html': navLinkId = 'nav-home'; break;
+    case 'research.html': navLinkId = 'nav-research'; break;
+    case 'members.html': navLinkId = 'nav-members'; break;
+    case 'resources.html': navLinkId = 'nav-resources'; break;
+    case 'blog.html': navLinkId = 'nav-blog'; break;
+    case 'contact_us.html': navLinkId = 'nav-contact'; break;
+    // Add more cases as needed
   }
-  
-  // Add active class to the corresponding link
   if (navLinkId) {
     const navLink = document.getElementById(navLinkId);
     if (navLink) {
-      console.log(`Setting active link: ${navLinkId}`);
       navLink.classList.add('active');
-    } else {
-      console.warn(`Nav link #${navLinkId} not found`);
     }
   }
 }

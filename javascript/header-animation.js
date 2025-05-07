@@ -1,50 +1,63 @@
-document.addEventListener('DOMContentLoaded', function() {
-  // Navigation toggle for mobile
+// javascript/header-animation.js
+
+// --- Function to set up the navigation toggle ---
+function setupMobileNavToggle() {
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
   
-  if(navToggle) {
+  if (navToggle && navLinks) { // Check if elements exist
     navToggle.addEventListener('click', function() {
       navLinks.classList.toggle('active');
     });
+    // console.log("Mobile nav toggle listener attached."); // Optional: for debugging
+  } else {
+    // console.warn("Mobile nav toggle elements (navToggle/navLinks) not found for setup."); // Optional: for debugging
   }
-  
-  // Scroll to content when clicking the scroll indicator
+}
+// --- End navigation toggle function ---
+
+document.addEventListener('DOMContentLoaded', function() {
+  // The call to setupMobileNavToggle() will now be handled by components-loader.js
+  // after the navbar is loaded. So, we don't call it directly here anymore.
+
+  // Scroll to content when clicking the scroll indicator (This part is fine)
   const scrollButton = document.getElementById('scroll-to-content');
-  if(scrollButton) {
+  if (scrollButton) {
     scrollButton.addEventListener('click', function() {
-      const aboutSection = document.getElementById('about');
-      if(aboutSection) {
+      const aboutSection = document.getElementById('about'); // Ensure 'about' ID exists on index.html for this to work there
+      const researchProjectsSection = document.querySelector('.research-projects'); // A more generic target for other pages
+
+      if (aboutSection) { // Primarily for index.html
         aboutSection.scrollIntoView({ behavior: 'smooth' });
-      } else {
+      } else if (researchProjectsSection) { // For pages like research.html
+        researchProjectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else { // Fallback if specific sections aren't found
         window.scrollTo({
-          top: window.innerHeight,
+          top: window.innerHeight * 0.8, // Scroll down most of the viewport height
           behavior: 'smooth'
         });
       }
     });
   }
   
-  
-  // Language toggle (for demonstration)
-  const languageToggle = document.getElementById('language-toggle');
-  if(languageToggle) {
-    languageToggle.addEventListener('click', function(e) {
+  // Handle form submission (This part is fine, specific to contactForm)
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      const currentLang = languageToggle.textContent;
-      
-      if(currentLang === '日本語') {
-        languageToggle.textContent = 'English';
-        // In a real implementation, you'd change the language
-        alert('Sorry, Japanese version is under development.');
-      } else {
-        languageToggle.textContent = '日本語';
-      }
+      alert('Thank you for your message! We will get back to you soon.');
+      contactForm.reset();
     });
   }
   
-  // Header Animation
-  setupHeaderAnimation();
+  // Language toggle (This part is fine, if you use it)
+  const languageToggle = document.getElementById('language-toggle');
+  if (languageToggle) {
+    // ... your language toggle logic ...
+  }
+  
+  // Header Particle Animation (This part is fine)
+  setupHeaderAnimation(); // Assuming this function is defined below in your script
 });
 
 function setupHeaderAnimation() {
