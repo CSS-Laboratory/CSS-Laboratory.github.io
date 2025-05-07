@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computational Social Science Laboratory</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- SheetJS for Excel parsing -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+  <!-- Navigation - will be loaded by components-loader.js -->
+  <div id="navbar-container"></div>
+
+  <!-- Header Section with Animation -->
+  <div class="css-lab-header" id="css-lab-header">
+    <div class="particles-container" id="particles-container"></div>
+    
+    <h1 class="lab-title" id="lab-title">
+      <span class="title-first-line">
+        <span class="title-word">COMPUTATIONAL</span>
+        <span class="title-word">SOCIAL</span>
+      </span>
+      <span class="title-word">SCIENCE</span> 
+      <span class="title-word">LABORATORY</span>
+    </h1>
+    
+    <p class="lab-subtitle" id="lab-subtitle">Advancing social science through computational methodologies and data-driven approaches to understand human behavior and social dynamics</p>
+    
+    <div class="scroll-indicator" id="scroll-to-content">
+      <div class="scroll-dot"></div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <h2 class="section-title">About Our Laboratory</h2>
+      
+      <div class="about-content"> 
+        
+        <div class="about-image"> 
+          <img src="images/index/hook-image.png" alt="Comic illustrating the relationship between theory and practice in research. Panel 1: Theory is when you know everything, but nothing works. Panel 2: Practice is when everything works, but no one knows why. Panel 3: In our research, theory and practice are combined: nothing works, and nobody knows why.">
+        </div>
+        
+        <div class="about-text" id="about-content"> 
+          <div class="loading-indicator">Loading content...</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Research Focus Section -->
+  <section class="research-focus">
+    <div class="container">
+      <h2 class="section-title">Research Areas</h2>
+      <div class="research-areas" id="research-areas">
+        <!-- Content will be loaded dynamically from research_focus.xlsx -->
+        <div class="loading-indicator">Loading content...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest News Section -->
+  <section class="news-section" id="news">
+    <div class="container">
+      <h2 class="section-title">Latest News</h2>
+      <div class="news-items" id="news-items">
+        <!-- Content will be loaded dynamically from latest_news.xlsx -->
+        <div class="loading-indicator">Loading content...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+ 
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <script src="javascript/header-animation.js"></script>
+  <script src="javascript/index-data-loader.js"></script>
+  <script src="javascript/components-loader.js"></script>
+  
+</body>
+</html>

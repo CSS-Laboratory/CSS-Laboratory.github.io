@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research - Computational Social Science Laboratory</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- SheetJS for Excel parsing -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <style>
+    /* Additional styles specific to research page */
+    .research-header {
+      background: linear-gradient(135deg, #1a2a6c, #2a4858);
+      color: white;
+      padding: 100px 0 60px;
+      text-align: center;
+    }
+    
+    .research-header h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+    
+    .research-header p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 18px;
+      opacity: 0.9;
+    }
+    
+    .research-project {
+      margin-bottom: 60px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .research-project:last-child {
+      border-bottom: none;
+    }
+    
+    .project-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+    }
+    
+    .project-text {
+      flex: 2;
+      min-width: 300px;
+    }
+    
+    .project-image {
+      flex: 1;
+      min-width: 250px;
+      text-align: center;
+    }
+    
+    .project-title {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: var(--primary-color);
+    }
+    
+    .project-subtitle {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 15px;
+      color: var(--accent-color);
+    }
+    
+    .team-members {
+      margin: 15px 0;
+    }
+    
+    .team-members span {
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 5px;
+      padding: 5px 10px;
+      background-color: #f2f6fc;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+    
+    .project-tags {
+      margin: 15px 0;
+    }
+    
+    .project-tags span {
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 5px;
+      padding: 5px 10px;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+    
+    .read-paper-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 8px 15px;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 5px;
+      transition: var(--transition);
+    }
+    
+    .read-paper-btn:hover {
+      background-color: var(--accent-color);
+      color: white;
+    }
+    
+    .publications-section {
+      background-color: #f2f6fc;
+      padding: 80px 0;
+    }
+    
+    .publication-list {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .publication-item {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .publication-item:last-child {
+      border-bottom: none;
+    }
+    
+    .publication-title {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    
+    .publication-authors {
+      font-size: 15px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    
+    .publication-journal {
+      font-size: 15px;
+      font-style: italic;
+      color: var(--accent-color);
+    }
+    
+    .publication-year {
+      font-weight: 500;
+      margin-left: 10px;
+    }
+    
+    .publication-links {
+      margin-top: 10px;
+    }
+    
+    .publication-links a {
+      display: inline-block;
+      margin-right: 15px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    
+    .publication-links a i {
+      margin-right: 5px;
+    }
+    
+    .loading-indicator {
+      text-align: center;
+      padding: 20px;
+      font-style: italic;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+   
+  <!-- Navigation - will be loaded by components-loader.js -->
+   <div id="navbar-container"></div>
+
+  <!-- Header Section with Animation -->
+  <div class="css-lab-header" id="css-lab-header">
+    <div class="particles-container" id="particles-container"></div>
+    
+    <h1 class="lab-title" id="lab-title"> RESEARCH</h1>
+    <p class="lab-subtitle" id="lab-subtitle">Our research focuses on understanding social behaviors and interactions through computational approaches, leveraging methods from data science, network analysis, natural language processing, and machine learning.</p>
+    
+    <div class="scroll-indicator" id="scroll-to-content">
+      <div class="scroll-dot"></div>
+    </div>
+  </div>
+
+  
+  
+  <!-- Current Projects Section -->
+  <section class="research-projects">
+    <div class="container">
+      <div class="research-hook-image-container">
+        <img src="images/research/hook-image.jpg" alt="..." class="research-hook-image">
+      </div>
+      <h2 class="section-title">Current Projects</h2>
+      
+      <div id="research-projects-container">
+        <!-- Content will be loaded dynamically from research_focus.xlsx -->
+        <div class="loading-indicator">Loading research projects...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications Section -->
+  <section class="publications-section">
+    <div class="container">
+      <h2 class="section-title">Selected Publications</h2>
+      
+      <div class="publication-list">
+        <!-- Content will be loaded dynamically from publications.xlsx -->
+        <div class="loading-indicator">Loading publications...</div> 
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  
+  <script src="javascript/header-animation.js"></script>
+  <script src="javascript/components-loader.js"></script>
+  <script src="javascript/research-loader.js"></script>
+  <div id="lightbox" class="lightbox-overlay" style="display: none;">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightboxImage" src="#" alt="Enlarged research image">
+  </div>
+</body>
+</html>
