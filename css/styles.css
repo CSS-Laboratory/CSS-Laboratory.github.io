@@ -864,3 +864,14 @@ section {
   max-width: 100%;
   height: auto; /* This 'height: auto' on global img might be overridden by 'height: 100%' above, which is intended for this specific case * /
 } */
+
+/* styles.css - in @media (max-width: 768px) */
+.nav-toggle {
+  display: block;
+  font-size: 24px; /* Ensure it's large enough */
+  cursor: pointer;
+  /* Add some padding if it's too small to tap easily */
+  /* padding: 10px; */
+  /* Ensure it's not hidden by another element */
+  /* z-index: 1001; /* If navbar is 1000, this button should be on top or accessible */
+}
