@@ -90,7 +90,7 @@ function loadRecruitmentBrief(container) {
         // Apply button
         const applyButton = document.createElement('a');
         applyButton.className = 'apply-button';
-        applyButton.href = applyLink;
+        applyButton.href = 'contact_us.html#recruitment';
         applyButton.textContent = 'Application Details';
         positionDiv.appendChild(applyButton);
         
