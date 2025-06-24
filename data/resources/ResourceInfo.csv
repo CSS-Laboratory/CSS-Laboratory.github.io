@@ -1,0 +1,7 @@
+﻿type,name,description,link,card_info,image
+Tool,Wordfish in Python,Wordfish implemented in Python,https://github.com/CSS-Laboratory/Wordfish/tree/main,data/resources/tools/wordfish.csv,images/resources/wordfish.png
+Tool,Burst Detection in Python,Kleinberg’s burst detection algorithm  in Python,https://github.com/CSS-Laboratory/BurstDetection/tree/main,data/resources/tools/burstdetection.csv,images/resources/burstdetection.png
+Dataset,Yahoo! News Japan,Datasets collected from Yahoo! News Japan,https://forms.gle/5DekonbYGViGoT2d8,data/resources/datasets/YahooNewsJapan.csv,images/resources/yahoo.png
+Dataset,Climate Change Related Videos on YouTube,Climate Change related videos and the corresponding comments collected from YouTube API,https://forms.gle/5DekonbYGViGoT2d8,data/resources/datasets/YouTubeClimateChange.csv,images/resources/youtube.png
+Dataset,Trending Videos on YouTube on YouTube,Trending videos and the corresponding comments collected from YouTube API,https://forms.gle/5DekonbYGViGoT2d8,data/resources/datasets/YouTubeTrending.csv,images/resources/youtube.png
+Dataset,BlueSky Dataset,BlueSky Datasets ,https://forms.gle/5DekonbYGViGoT2d8,data/resources/datasets/BlueSky.csv,images/resources/bluesky.png

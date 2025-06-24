@@ -875,3 +875,139 @@ section {
   /* Ensure it's not hidden by another element */
   /* z-index: 1001; /* If navbar is 1000, this button should be on top or accessible */
 }
+/* --- Resources Page Styles --- */
+
+.resources-section {
+  padding: 60px 15px;
+  background-color: #f4f6f9; /* A slightly cooler, tech-like background */
+}
+
+.resources-section .section-title {
+  text-align: center;
+  margin-bottom: 50px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 2.8rem;
+  color: #1a253c; /* A darker, more serious blue */
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.resources-section .section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background-image: linear-gradient(to right, #007bff, #00c6ff); /* Gradient effect */
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 35px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.resource-card {
+  font-family: 'Roboto', sans-serif; /* Ensuring font consistency */
+  background-color: #fff;
+  border: 1px solid #e0e7ff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 30, 80, 0.05);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Important for child element styling */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 91, 255, 0.1);
+  border-color: #007bff;
+}
+
+.resource-card .card-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #fcfdff;
+  border-bottom: 1px solid #e0e7ff;
+}
+
+.resource-card .resource-icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  object-fit: contain;
+}
+
+.resource-card h3 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0;
+  color: #1a253c;
+}
+
+.resource-card .card-body {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.resource-card .details-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resource-card .details-list li {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 12px;
+  line-height: 1.6;
+  padding-left: 20px;
+  position: relative;
+}
+
+.resource-card .details-list li::before {
+  content: '▶'; /* Data-like arrow */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #007bff;
+  font-size: 0.7rem;
+}
+
+.resource-card .details-list li strong {
+  color: #333;
+  font-weight: 500;
+}
+
+.resource-card .card-footer {
+  padding: 20px;
+  margin-top: auto; /* Pushes footer to the bottom */
+  background-color: #fcfdff;
+  border-top: 1px solid #e0e7ff;
+  text-align: right;
+}
+
+.resource-card .btn-details {
+  display: inline-block;
+  background-image: linear-gradient(to right, #007bff, #0056b3);
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: none;
+}
+
+.resource-card .btn-details:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 91, 255, 0.3);
+}

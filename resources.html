@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GLT1PTTN4B"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -12,43 +11,42 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[PAGE_TITLE] - Computational Social Science Laboratory</title>
+  <title>Resources - Computational Social Science Laboratory</title>
   <link rel="stylesheet" href="css/styles.css">
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Navigation - will be loaded by components-loader.js -->
   <div id="navbar-container"></div>
 
-  <!-- Header Section with Animation -->
   <div class="css-lab-header" id="css-lab-header">
     <div class="particles-container" id="particles-container"></div>
-    
-    <h1 class="lab-title" id="lab-title">RESOURCE</h1>
-    <p class="lab-subtitle" id="lab-subtitle">Find resources and tools for your research.</p>
-    
+    <h1 class="lab-title" id="lab-title">RESOURCES</h1>
+    <p class="lab-subtitle" id="lab-subtitle">Explore datasets and tools from our lab.</p>
     <div class="scroll-indicator" id="scroll-to-content">
       <div class="scroll-dot"></div>
     </div>
   </div>
 
-  <!-- Main Content Section -->
-  <section class="[PAGE_ID]-section">
+  <main class="resources-section">
     <div class="container">
-      <h2 class="section-title">UNDER CONSTRUCTION</h2>
       
-      <!-- Add your content here -->
-      
-    </div>
-  </section>
+      <h2 class="section-title">Datasets</h2>
+      <div id="datasets-container" class="resource-grid">
+        </div>
 
-  <!-- Footer -->
+      <h2 class="section-title">Computational Tools</h2>
+      <div id="tools-container" class="resource-grid">
+        </div>
+
+    </div>
+  </main>
+
   <div id="footer-container"></div>
 
   <script src="javascript/header-animation.js"></script>
   <script src="javascript/components-loader.js"></script>
+  <script src="javascript/resources-loader.js"></script>
+
 </body>
 </html>
