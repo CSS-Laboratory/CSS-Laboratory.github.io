@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 ${detailsHtml}
             </div>
             <div class="card-footer">
-                <a href="${resource.link || '#'}" class="btn-details" target="_blank" rel="noopener noreferrer">Access This Resource</a>
+                <a href="${resource.link || '#'}" class="btn-details" target="_blank" rel="noopener noreferrer">Access This Resource/Contact Us</a>
             </div>
         `;
         return card;
