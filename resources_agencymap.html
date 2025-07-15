@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GLT1PTTN4B"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-GLT1PTTN4B');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agency Map - Computational Social Science Laboratory</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Specific styles for the iframe container page */
+    .iframe-section {
+      padding: 40px 15px; /* Reduced padding to give more space to the plot */
+      background-color: #f4f6f9;
+    }
+
+    .iframe-container {
+      width: 100%;
+      /* Maintain a 16:9 aspect ratio for the iframe */
+      position: relative;
+      padding-top: 65%; /* Adjust this percentage to change the height/aspect ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .iframe-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0; /* Remove default iframe border */
+    }
+
+    /* Style for the GitHub link below the plot */
+    .github-link {
+      text-align: center;
+      margin-top: 25px;
+      font-size: 1rem;
+      font-family: 'Roboto', sans-serif;
+      color: #333;
+    }
+    .github-link a {
+      color: #007bff; /* A nice blue for the link */
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid #007bff;
+      padding-bottom: 2px;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+    .github-link a:hover {
+      color: #0056b3; /* Darker blue on hover */
+      border-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation - will be loaded by components-loader.js -->
+  <div id="navbar-container"></div>
+
+  <!-- Header Section with Animation -->
+  <div class="css-lab-header" id="css-lab-header">
+    <div class="particles-container" id="particles-container"></div>
+    <h1 class="lab-title" id="lab-title">Media Map</h1>
+    <p class="lab-subtitle" id="lab-subtitle">An interactive visualization of news media partisanship.</p>
+    <div class="scroll-indicator" id="scroll-to-content">
+      <div class="scroll-dot"></div>
+    </div>
+  </div>
+
+  <!-- Main Content Section -->
+  <main class="iframe-section">
+    <div class="container">
+      <div class="iframe-container">
+        <!-- The iframe will load your interactive map here -->
+        <iframe src="subpages/resources/MediaMap.html" title="Interactive Media Map"></iframe>
+      </div>
+      <!-- GitHub Link -->
+      <p class="github-link">
+        The code used to generate this plot is available on our <a href="https://github.com/CSS-Laboratory/Partisanship-Estimation" target="_blank" rel="noopener noreferrer">GitHub page</a>.
+      </p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+  
+  <!-- Scripts for shared components and animations -->
+  <script src="javascript/header-animation.js"></script>
+  <script src="javascript/components-loader.js"></script>
+
+</body>
+</html>

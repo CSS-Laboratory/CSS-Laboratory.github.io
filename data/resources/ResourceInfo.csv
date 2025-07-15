@@ -5,3 +5,4 @@ Dataset,Yahoo! News Japan,Datasets collected from Yahoo! News Japan,https://form
 Dataset,Climate Change Related Videos on YouTube,Climate Change related videos and the corresponding comments collected from YouTube API,https://forms.gle/5DekonbYGViGoT2d8,data/resources/datasets/YouTubeClimateChange.csv,images/resources/youtube.png
 Dataset,Trending Videos on YouTube,Trending videos and the corresponding comments collected from YouTube API,https://forms.gle/5DekonbYGViGoT2d8,data/resources/datasets/YouTubeTrending.csv,images/resources/youtube.png
 Dataset,BlueSky Dataset,BlueSky Datasets ,https://forms.gle/5DekonbYGViGoT2d8,data/resources/datasets/BlueSky.csv,images/resources/bluesky.png
+Tool,Media  Map,Interactive Plot of Media Partisanship,resources_agencymap.html,data/resources/tools/mediamap.csv,images/resources/mediamap.png
